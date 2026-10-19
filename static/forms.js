@@ -13,6 +13,7 @@
     voornaam: "Vul je voornaam in.",
     email: "Vul een geldig e-mailadres in.",
     functies: "Vul in welk werk je zoekt.",
+    woonplaats: "Vul je woonplaats of postcode in.",
     bericht: "Houd je bericht korter dan 2000 tekens.",
     toestemming: "Zonder toestemming kunnen we je gegevens niet bewaren."
   };
@@ -77,6 +78,7 @@
     } else {
       if (!String(data.voornaam || "").trim()) errors.voornaam = MESSAGES.voornaam;
       if (!String(data.functies || "").trim()) errors.functies = MESSAGES.functies;
+      if (!String(data.woonplaats || "").trim() && !String(data.postcode || "").trim()) errors.woonplaats = MESSAGES.woonplaats;
     }
     if (!EMAIL_RE.test(String(data.email || "").trim())) errors.email = MESSAGES.email;
     if (String(data.bericht || "").length > 2000) errors.bericht = MESSAGES.bericht;
@@ -92,7 +94,7 @@
   }
 
   function showErrors(form, errors) {
-    var names = ["naam", "voornaam", "email", "functies", "bericht", "cv", "toestemming"];
+    var names = ["naam", "voornaam", "email", "woonplaats", "functies", "bericht", "cv", "toestemming"];
     var first = null;
     names.forEach(function (name) {
       setError(form, name, errors[name] || "");

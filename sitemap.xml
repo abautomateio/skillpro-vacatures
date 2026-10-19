@@ -2,5 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://vacatures.skillpro.nl/</loc></url>
   <url><loc>https://vacatures.skillpro.nl/vacatures/</loc></url>
+  <url><loc>https://vacatures.skillpro.nl/zorg/</loc></url>
+  <url><loc>https://vacatures.skillpro.nl/beveiliging/</loc></url>
+  <url><loc>https://vacatures.skillpro.nl/infra/</loc></url>
   <url><loc>https://vacatures.skillpro.nl/vacatures/beveiliger-in-ede/</loc><lastmod>2026-10-19</lastmod></url>
 </urlset>

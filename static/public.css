@@ -110,6 +110,8 @@ p { margin: 0 0 8px; }
 .hero .lead { color: rgba(255,255,255,.82); font-size: 18px; max-width: 560px; margin-bottom: 8px; }
 .hero .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: rgba(255,255,255,.8); margin-bottom: 16px; }
 .hero .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); }
+.hero .eyebrow a { color: inherit; text-decoration: none; padding: 4px 0; }
+.hero .eyebrow a:hover { text-decoration: underline; }
 .hero .actions .button:not(.ghost) { background: var(--brand); }
 .hero-stats { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 36px; }
 .hero-stats div { font-size: 14px; color: rgba(255,255,255,.75); }
@@ -223,6 +225,36 @@ address { font-style: normal; margin: 0 0 8px; }
 .form-card { max-width: 720px; }
 .form-intro { margin: 0 0 16px; font-size: 14px; }
 
+/* Uitklapblok, FAQ, sectorpagina's en de fallback zonder JavaScript */
+.form details.more { border: 1px solid var(--line); border-radius: var(--radius-field); background: var(--surface-2); }
+.form details.more summary { cursor: pointer; padding: 12px 14px; font-size: 14px; font-weight: 500; color: var(--ink); list-style: none; display: flex; align-items: center; gap: 8px; min-height: 46px; }
+.form details.more summary::-webkit-details-marker { display: none; }
+.form details.more summary::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid var(--ink-2); border-bottom: 1.5px solid var(--ink-2); transform: rotate(-45deg); transition: transform .15s; margin-left: 2px; }
+.form details.more[open] summary::before { transform: rotate(45deg); }
+.form details.more .more-fields { display: grid; gap: 16px; padding: 4px 14px 16px; }
+.nojs { background: var(--brand-soft); border-radius: var(--radius-field); padding: 16px; margin-bottom: 16px; }
+.nojs p { margin: 0 0 10px; }
+.nojs p:last-child { margin: 0; }
+.faq-section { margin-top: 48px; max-width: 760px; }
+.faq { margin: 0; display: grid; gap: 10px; }
+.faq div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 18px 20px; }
+.faq dt { font-family: var(--font-head); font-weight: 600; font-size: 17px; margin-bottom: 6px; }
+.faq dd { margin: 0; color: var(--ink-2); }
+.eyebrow-dark { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--ink-2); margin: 0 0 10px; }
+.eyebrow-dark::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); }
+.sector-head { max-width: 760px; }
+.sector-grid { display: grid; gap: 20px; grid-template-columns: 1fr; align-items: start; margin-top: 20px; }
+.sector-intro p { margin-bottom: 12px; line-height: 1.65; }
+.sector-intro .actions { margin-top: 16px; }
+.bands h2 { font-size: 18px; margin: 0 0 14px; }
+.bands dl { margin: 0 0 12px; display: grid; gap: 10px; }
+.bands dt { font-weight: 600; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.bands dt .count { font-size: 12px; font-weight: 500; color: var(--ink-2); white-space: nowrap; }
+.bands dd { margin: 0; color: var(--ink-2); font-size: 14px; }
+.bands .note { font-size: 13px; color: var(--ink-2); margin: 12px 0 0; }
+.plain { margin: 0 0 8px; padding-left: 18px; }
+.plain li { margin: 3px 0; }
+
 /* Waarom via Skillpro */
 .points { display: grid; gap: 14px; grid-template-columns: 1fr; margin: 0; padding: 0; list-style: none; }
 .points li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 20px; box-shadow: var(--shadow-card); }
@@ -243,6 +275,7 @@ address { font-style: normal; margin: 0 0 8px; }
   .facts dl { grid-template-columns: 1fr 1fr; }
 }
 @media (min-width: 880px) {
+  .sector-grid { grid-template-columns: minmax(0, 1fr) 340px; }
   .vacancy-grid { grid-template-columns: minmax(0, 1fr) 320px; grid-template-areas: "body facts" "form facts"; }
   .facts { position: sticky; top: 88px; }
   .facts dl { grid-template-columns: 1fr; }
