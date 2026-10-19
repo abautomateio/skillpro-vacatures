@@ -179,6 +179,8 @@
         if (ok) shown += 1;
       });
       if (noMatch) noMatch.hidden = shown > 0;
+      var count = document.getElementById("vacancy-count");
+      if (count) count.textContent = shown + " " + (shown === 1 ? count.getAttribute("data-one") : count.getAttribute("data-many"));
     }
     var params = new URLSearchParams(location.search);
     names.forEach(function (name) {
