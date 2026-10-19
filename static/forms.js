@@ -233,8 +233,12 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) { entry.target.classList.add("in"); observer.unobserve(entry.target); }
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    }, { rootMargin: "0px 0px -5% 0px", threshold: 0 });
     Array.prototype.forEach.call(items, function (el) { observer.observe(el); });
+    // Vangnet: na een paar seconden staat alles hoe dan ook op de pagina.
+    setTimeout(function () {
+      Array.prototype.forEach.call(items, function (el) { el.classList.add("in"); observer.unobserve(el); });
+    }, 2500);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
