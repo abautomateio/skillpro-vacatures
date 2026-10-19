@@ -6,16 +6,20 @@
   <title>Inschrijven · Skillpro vacatures</title>
   <meta name="description" content="Open vacatures van Skillpro in zorg, beveiliging en infra. Vast, tijdelijk of op projectbasis.">
   <meta name="theme-color" content="#18023A">
-  <link rel="icon" href="/static/img/favicon.png" type="image/png">
+  <link rel="icon" href="/static/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png">
+  <link rel="preload" href="/static/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/outfit-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/static/public.css">
   <script defer src="/static/forms.js"></script>
   <meta name="robots" content="noindex">
 </head>
 <body>
+  <a class="skip" href="#inhoud">Naar de inhoud</a>
   <header class="site-header">
     <div class="wrap row">
       <a class="logo" href="/" aria-label="Skillpro, naar de startpagina">
-        <img src="/static/img/logo-breed-zwart.png" alt="Skillpro" width="160" height="120">
+        <img src="/static/img/logo-breed-zwart.png" alt="Skillpro" width="210" height="96">
       </a>
       <nav class="nav" aria-label="Hoofdnavigatie">
         <a href="/vacatures" >Vacatures</a>
@@ -25,7 +29,7 @@
     </div>
   </header>
 
-  <main class="wrap">
+  <main class="wrap" id="inhoud" tabindex="-1">
     
 <div class="page-head">
   <h1>Inschrijven</h1>
@@ -33,35 +37,36 @@
 </div>
 
 <section class="card form-card">
+  <p class="muted form-intro">Alleen de velden met "verplicht" zijn nodig; de rest bespreken we aan de telefoon.</p>
   <form class="form" method="post" action="https://script.google.com/macros/s/AKfycbyODAADNZBJMZZK-dx6atpZ4vx1ZN6-dV9tluOjGQweVxPQdjQMzTiPHwlcvYS89AvW/exec" enctype="multipart/form-data" novalidate data-kind="inschrijving">
     <input type="hidden" name="soort" value="inschrijving">
     <div class="hp" aria-hidden="true">
       <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
     </div>
     <div class="two">
-      <label>Voornaam
-        <input type="text" name="voornaam" value="" required autocomplete="given-name">
+      <label>Voornaam <span class="opt">(verplicht)</span>
+        <input type="text" name="voornaam" value="" required autocomplete="given-name" autocapitalize="words" autocorrect="off" spellcheck="false">
         
       </label>
       <label>Achternaam
-        <input type="text" name="achternaam" value="" autocomplete="family-name">
+        <input type="text" name="achternaam" value="" autocomplete="family-name" autocapitalize="words" autocorrect="off" spellcheck="false">
       </label>
-      <label>E-mailadres
-        <input type="email" name="email" value="" required autocomplete="email">
+      <label>E-mailadres <span class="opt">(verplicht)</span>
+        <input type="email" name="email" value="" required autocomplete="email" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false">
         
       </label>
       <label>Telefoonnummer
         <input type="tel" name="telefoon" value="" autocomplete="tel">
       </label>
       <label>Postcode
-        <input type="text" name="postcode" value="" autocomplete="postal-code">
+        <input type="text" name="postcode" value="" autocomplete="postal-code" autocapitalize="characters" autocorrect="off" spellcheck="false">
       </label>
       <label>Woonplaats
-        <input type="text" name="woonplaats" value="" autocomplete="address-level2">
+        <input type="text" name="woonplaats" value="" autocomplete="address-level2" autocapitalize="words" autocorrect="off" spellcheck="false">
         
       </label>
     </div>
-    <label>Welk werk zoek je? <span class="hint">Meerdere functies met komma's ertussen</span>
+    <label>Welk werk zoek je? <span class="opt">(verplicht)</span> <span class="hint">Meerdere functies met komma's ertussen</span>
       <input type="text" name="functies" value="" required placeholder="Bijvoorbeeld: verzorgende IG, verpleegkundige">
       
     </label>
@@ -85,10 +90,10 @@
         <input type="date" name="beschikbaar" value="">
       </label>
       <label>Uren per week, van
-        <input type="number" name="uren_min" min="0" max="60" value="">
+        <input type="number" name="uren_min" min="0" max="60" inputmode="numeric" value="">
       </label>
       <label>tot
-        <input type="number" name="uren_max" min="0" max="60" value="">
+        <input type="number" name="uren_max" min="0" max="60" inputmode="numeric" value="">
       </label>
     </div>
     <fieldset>
@@ -105,7 +110,7 @@
       <label class="check inline"><input type="checkbox" name="dienstverband" value="stage" > <span>Stage</span></label>
       
     </fieldset>
-    <label>CV <span class="hint">PDF of Word, maximaal 10 MB</span>
+    <label>Cv <span class="hint">PDF of Word, maximaal 10 MB</span>
       <input type="file" name="cv" accept=".pdf,.doc,.docx,.txt">
       
     </label>
@@ -114,7 +119,7 @@
       <span>Ik geef Skillpro toestemming om mijn gegevens 12 maanden te bewaren om mij te bemiddelen naar werk. Ik kan dit altijd intrekken via info@skillpro.nl.</span>
     </label>
     
-    <p class="error" data-form-error hidden></p>
+    <p class="notice" role="alert" data-form-error hidden></p>
     <button class="button" type="submit">Inschrijven</button>
   </form>
 </section>
