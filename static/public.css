@@ -1,0 +1,103 @@
+/* Publieke site (vacatures.skillpro.nl): dezelfde tokens als de interne app (docs/05). */
+@font-face { font-family: "Outfit"; font-weight: 600; font-display: swap; src: url("/static/fonts/outfit-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 400; font-display: swap; src: url("/static/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-display: swap; src: url("/static/fonts/inter-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 600; font-display: swap; src: url("/static/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+
+:root {
+  --bg: #F5F3F8;
+  --surface: #FFFFFF;
+  --surface-2: #FAF9FC;
+  --line: #E6E2EE;
+  --ink: #0F0520;
+  --ink-2: #5E5872;
+  --brand: #FF8F45;
+  --brand-strong: #F0671E;
+  --violet: #B47CFD;
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --radius-field: 8px;
+  --shadow-card: 0 1px 2px rgba(15, 5, 32, .06);
+  --font-head: "Outfit", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.5; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+a { color: var(--ink); }
+h1, h2, h3 { font-family: var(--font-head); font-weight: 600; margin: 0 0 8px; }
+h1 { font-size: 32px; line-height: 1.2; }
+h2 { font-size: 20px; margin-top: 32px; }
+h3 { font-size: 18px; }
+p { margin: 0 0 8px; }
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; width: 100%; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+
+.site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
+.site-header .row { min-height: 72px; }
+.logo img { display: block; height: 56px; width: auto; }
+.nav { display: flex; gap: 8px; }
+.nav a { text-decoration: none; padding: 8px 16px; border-radius: var(--radius-pill); font-weight: 500; color: var(--ink-2); }
+.nav a:hover, .nav a[aria-current="page"] { background: var(--bg); color: var(--ink); }
+
+.hero { padding: 48px 0 16px; max-width: 640px; }
+.lead { font-size: 18px; color: var(--ink-2); margin-bottom: 24px; }
+
+.button { display: inline-block; background: var(--brand); color: var(--ink); font-weight: 600; font-size: 14px; padding: 10px 20px; border-radius: var(--radius-pill); border: 0; text-decoration: none; cursor: pointer; font-family: var(--font-body); }
+.button:hover { background: var(--brand-strong); }
+.button:focus-visible, a:focus-visible, select:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 20px 24px; }
+.card.empty { color: var(--ink-2); margin-top: 8px; }
+.vacancy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.vacancy-list h3 a { text-decoration: none; }
+.vacancy-list h3 a:hover { color: var(--brand-strong); }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--ink-2); font-size: 14px; margin: 0; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; margin: 16px 0 24px; }
+.filters label { display: grid; gap: 4px; font-size: 12px; font-weight: 500; color: var(--ink-2); }
+.filters select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-field); padding: 8px 12px; min-width: 180px; }
+
+.site-footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 24px 0; font-size: 14px; color: var(--ink-2); }
+.site-footer a { color: var(--ink-2); }
+
+@media (max-width: 640px) {
+  h1 { font-size: 28px; }
+  .hero { padding-top: 32px; }
+  .logo img { height: 44px; }
+  .site-footer .row { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* Fase 5: detailpagina en formulieren */
+.crumbs { color: var(--ink-2); font-size: 14px; margin: 16px 0 8px; }
+.crumbs a { color: var(--ink-2); }
+.vacancy { padding-bottom: 32px; }
+.vacancy > .meta { margin: 0 0 16px; }
+.vacancy-body { margin: 16px 0 24px; }
+.vacancy-body h2 { font-size: 18px; margin-top: 24px; }
+.vacancy-body h2:first-child { margin-top: 0; }
+.vacancy-body ul { padding-left: 20px; margin: 0 0 12px; }
+.vacancy-body li { margin: 4px 0; }
+.form { display: grid; gap: 14px; }
+.form label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 500; color: var(--ink-2); }
+.form input[type="text"], .form input[type="email"], .form input[type="tel"], .form input[type="number"], .form input[type="date"], .form select, .form textarea, .filters select {
+  font: inherit; font-size: 16px; color: var(--ink); padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius-field); background: var(--surface); min-height: 44px;
+}
+.form textarea { resize: vertical; }
+.form input:focus-visible, .form select:focus-visible, .form textarea:focus-visible { outline: 2px solid var(--brand); outline-offset: 1px; }
+.form .two { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .form .two { grid-template-columns: 1fr 1fr; } }
+.form fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.form legend { font-size: 14px; font-weight: 500; color: var(--ink-2); margin-bottom: 6px; width: 100%; }
+.form .check { flex-direction: row; align-items: flex-start; gap: 10px; color: var(--ink); font-weight: 400; }
+.form .check input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--brand); flex: none; }
+.form .check.inline { align-items: center; }
+.form .button { justify-self: start; }
+.form .hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.error { color: #B42318; font-weight: 500; font-size: 13px; }
+.notice { background: #FDECEA; color: #B42318; border-radius: var(--radius-field); padding: 10px 14px; font-size: 14px; }
+.button.secondary { background: var(--surface); border: 1px solid var(--line); margin-left: 8px; }
+.button.secondary:hover { background: var(--bg); }

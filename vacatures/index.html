@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vacatures · Skillpro vacatures</title>
+  <meta name="description" content="Open vacatures van Skillpro in zorg, beveiliging en infra. Vast, tijdelijk of op projectbasis.">
+  <link rel="icon" href="/static/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/static/public.css">
+  <script defer src="/static/forms.js"></script>
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap row">
+      <a class="logo" href="/" aria-label="Skillpro, naar de startpagina">
+        <img src="/static/img/logo-breed-zwart.png" alt="Skillpro" width="160" height="120">
+      </a>
+      <nav class="nav" aria-label="Hoofdnavigatie">
+        <a href="/vacatures" aria-current="page">Vacatures</a>
+        <a href="/inschrijven" >Inschrijven</a>
+        <a href="https://www.skillpro.nl" rel="noopener">skillpro.nl</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    
+<h1>Vacatures</h1>
+
+<form class="filters" method="get" action="/vacatures" id="vacancy-filters">
+  <label>Sector
+    <select name="sector">
+      <option value="">Alle sectoren</option>
+      
+      <option value="zorg" >Zorg</option>
+      
+      <option value="beveiliging" >Beveiliging</option>
+      
+      <option value="infra" >Infra</option>
+      
+      <option value="overig" >Overig</option>
+      
+    </select>
+  </label>
+  <label>Provincie
+    <select name="provincie">
+      <option value="">Alle provincies</option>
+      
+      <option value="Drenthe" >Drenthe</option>
+      
+      <option value="Flevoland" >Flevoland</option>
+      
+      <option value="Friesland" >Friesland</option>
+      
+      <option value="Gelderland" >Gelderland</option>
+      
+      <option value="Groningen" >Groningen</option>
+      
+      <option value="Limburg" >Limburg</option>
+      
+      <option value="Noord-Brabant" >Noord-Brabant</option>
+      
+      <option value="Noord-Holland" >Noord-Holland</option>
+      
+      <option value="Overijssel" >Overijssel</option>
+      
+      <option value="Utrecht" >Utrecht</option>
+      
+      <option value="Zeeland" >Zeeland</option>
+      
+      <option value="Zuid-Holland" >Zuid-Holland</option>
+      
+    </select>
+  </label>
+  <button class="button" type="submit">Filteren</button>
+</form>
+
+
+
+<div class="card empty">
+  <p>Er staan op dit moment geen vacatures open.</p>
+  <p>Wil je toch met ons in gesprek? Mail naar <a href="mailto:info@skillpro.nl">info@skillpro.nl</a>.</p>
+</div>
+
+<div class="card empty" id="no-match" hidden>
+  <p>Geen vacatures voor deze keuze. <a href="/vacatures">Toon alle vacatures</a>.</p>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap row">
+      <span>Skillpro, Ede</span>
+      <a href="https://www.skillpro.nl/privacy" rel="noopener">Privacyverklaring</a>
+      <a href="mailto:info@skillpro.nl">info@skillpro.nl</a>
+    </div>
+  </footer>
+</body>
+</html>

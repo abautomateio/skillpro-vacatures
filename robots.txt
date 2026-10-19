@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /inschrijven
+Disallow: /bedankt
+Sitemap: https://vacatures.skillpro.nl/sitemap.xml

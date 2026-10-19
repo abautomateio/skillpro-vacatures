@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inschrijven · Skillpro vacatures</title>
+  <meta name="description" content="Open vacatures van Skillpro in zorg, beveiliging en infra. Vast, tijdelijk of op projectbasis.">
+  <link rel="icon" href="/static/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/static/public.css">
+  <script defer src="/static/forms.js"></script>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap row">
+      <a class="logo" href="/" aria-label="Skillpro, naar de startpagina">
+        <img src="/static/img/logo-breed-zwart.png" alt="Skillpro" width="160" height="120">
+      </a>
+      <nav class="nav" aria-label="Hoofdnavigatie">
+        <a href="/vacatures" >Vacatures</a>
+        <a href="/inschrijven" aria-current="page">Inschrijven</a>
+        <a href="https://www.skillpro.nl" rel="noopener">skillpro.nl</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    
+<h1>Inschrijven</h1>
+<p class="lead">Geen passende vacature gezien? Schrijf je in. We kijken welke opdrachtgevers bij je passen en nemen contact op.</p>
+
+<section class="card">
+  <form class="form" method="post" action="/inschrijven" enctype="multipart/form-data" novalidate data-kind="inschrijving">
+    <input type="hidden" name="soort" value="inschrijving">
+    <div class="hp" aria-hidden="true">
+      <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
+    <div class="two">
+      <label>Voornaam
+        <input type="text" name="voornaam" value="" required autocomplete="given-name">
+        
+      </label>
+      <label>Achternaam
+        <input type="text" name="achternaam" value="" autocomplete="family-name">
+      </label>
+      <label>E-mailadres
+        <input type="email" name="email" value="" required autocomplete="email">
+        
+      </label>
+      <label>Telefoonnummer
+        <input type="tel" name="telefoon" value="" autocomplete="tel">
+      </label>
+      <label>Postcode
+        <input type="text" name="postcode" value="" autocomplete="postal-code">
+      </label>
+      <label>Woonplaats
+        <input type="text" name="woonplaats" value="" autocomplete="address-level2">
+        
+      </label>
+    </div>
+    <label>Welk werk zoek je? (meerdere functies met komma's ertussen)
+      <input type="text" name="functies" value="" required>
+      
+    </label>
+    <div class="two">
+      <label>Hoe ver wil je reizen?
+        <select name="straal">
+          
+          <option value="10" >Tot 10 km</option>
+          
+          <option value="20" >Tot 20 km</option>
+          
+          <option value="30" selected>Tot 30 km</option>
+          
+          <option value="50" >Tot 50 km</option>
+          
+          <option value="75" >Tot 75 km</option>
+          
+        </select>
+      </label>
+      <label>Beschikbaar per
+        <input type="date" name="beschikbaar" value="">
+      </label>
+      <label>Uren per week, van
+        <input type="number" name="uren_min" min="0" max="60" value="">
+      </label>
+      <label>tot
+        <input type="number" name="uren_max" min="0" max="60" value="">
+      </label>
+    </div>
+    <fieldset>
+      <legend>Soort werk</legend>
+      
+      <label class="check inline"><input type="checkbox" name="dienstverband" value="vast" > <span>Vast</span></label>
+      
+      <label class="check inline"><input type="checkbox" name="dienstverband" value="tijdelijk" > <span>Tijdelijk</span></label>
+      
+      <label class="check inline"><input type="checkbox" name="dienstverband" value="uitzend" > <span>Uitzendwerk</span></label>
+      
+      <label class="check inline"><input type="checkbox" name="dienstverband" value="zzp" > <span>Zzp</span></label>
+      
+      <label class="check inline"><input type="checkbox" name="dienstverband" value="stage" > <span>Stage</span></label>
+      
+    </fieldset>
+    <label>CV (PDF of Word, maximaal 10 MB)
+      <input type="file" name="cv" accept=".pdf,.doc,.docx,.txt">
+      
+    </label>
+    <label class="check">
+      <input type="checkbox" name="toestemming" value="ja" required>
+      <span>Ik geef Skillpro toestemming om mijn gegevens 12 maanden te bewaren om mij te bemiddelen naar werk. Ik kan dit altijd intrekken via info@skillpro.nl.</span>
+    </label>
+    
+    <p class="error" data-form-error hidden></p>
+    <button class="button" type="submit">Inschrijven</button>
+  </form>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap row">
+      <span>Skillpro, Ede</span>
+      <a href="https://www.skillpro.nl/privacy" rel="noopener">Privacyverklaring</a>
+      <a href="mailto:info@skillpro.nl">info@skillpro.nl</a>
+    </div>
+  </footer>
+</body>
+</html>
