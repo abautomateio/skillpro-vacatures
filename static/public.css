@@ -176,6 +176,18 @@ p { margin: 0 0 8px; }
 .facts .note { font-size: 13px; color: var(--ink-2); margin: 12px 0 0; }
 .facts .note a { display: inline-block; padding: 4px 0; }
 .facts .button { width: 100%; }
+.facts .salary dd { font-family: var(--font-head); font-size: 18px; }
+.facts dd small { display: block; font-size: 13px; font-weight: 400; color: var(--ink-2); }
+
+/* Stappen (solliciteren, bedankt) */
+.steps { list-style: none; counter-reset: step; margin: 0 0 20px; padding: 0; display: grid; gap: 10px; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 28px 1fr; column-gap: 12px; align-items: baseline; }
+.steps li::before { content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--brand-soft); color: var(--ink); font-weight: 600; font-size: 13px; grid-row: span 2; align-self: start; }
+.steps strong { font-weight: 600; }
+.steps span { grid-column: 2; display: block; font-size: 14px; color: var(--ink-2); }
+.status .steps { margin-top: 8px; }
+.status h2 { font-size: 18px; margin-top: 28px; }
+address { font-style: normal; margin: 0 0 8px; }
 
 /* Vaste knopbalk op telefoons (verdwijnt zodra het formulier in beeld is, zie forms.js) */
 .apply-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9; display: flex; gap: 10px; padding: 10px 16px; padding-bottom: calc(10px + env(safe-area-inset-bottom)); background: rgba(255, 255, 255, .96); backdrop-filter: blur(8px); border-top: 1px solid var(--line); }
