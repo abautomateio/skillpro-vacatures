@@ -36,8 +36,10 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 96px; }
-body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; position: relative; }
+html { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 96px; overflow-x: clip; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; position: relative; overflow-x: clip; }
+/* De gloed achter koppen loopt buiten het vlak; de pagina zelf scrolt nooit horizontaal. */
+.hero, .page-head, .vacancy-head, .status { overflow: visible; }
 /* Fijne korrel over de hele pagina, zoals een drukwerkvel; bijna onzichtbaar maar het maakt het vlak rijk. */
 body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .035; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
 main, header, footer { position: relative; z-index: 1; }
