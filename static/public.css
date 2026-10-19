@@ -14,6 +14,7 @@
   --panel: #18023A;         /* skillpro.nl: panelen */
   --line: #2B2338;          /* skillpro.nl: randen */
   --line-2: #3D3356;
+  --field: #6A6485;         /* rand van invoervelden: 3,5:1 op de donkere achtergrond */
   --text: #FFFFFF;
   --text-2: #D6D1E4;        /* lopende tekst: 12:1 */
   --muted: #9B96B0;         /* skillpro.nl: toelichting, 6,6:1 */
@@ -140,7 +141,7 @@ address { font-style: normal; margin: 0 0 8px; color: var(--muted); }
 /* Filters */
 .filters { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: end; margin: 28px 0 32px; }
 .filters label { display: grid; gap: 6px; font-size: 13px; font-weight: 500; color: var(--muted); flex: 1 1 160px; max-width: 240px; }
-.filters select { font: inherit; font-size: 15px; color: var(--text); background: var(--bg-2); border: 1px solid var(--line-2); border-radius: var(--radius); padding: 0 34px 0 14px; height: 46px; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239b96b0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+.filters select { font: inherit; font-size: 15px; color: var(--text); background: var(--bg-2); border: 1px solid var(--field); border-radius: var(--radius); padding: 0 34px 0 14px; height: 46px; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239b96b0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
 .filters select:hover { border-color: var(--pink); }
 .filters .button { height: 46px; }
 
@@ -190,7 +191,7 @@ address { font-style: normal; margin: 0 0 8px; color: var(--muted); }
 .form label > input, .form label > select, .form label > textarea { display: block; width: 100%; margin-top: 6px; }
 .form .opt { font-weight: 400; color: var(--muted); }
 .form input[type="text"], .form input[type="email"], .form input[type="tel"], .form input[type="number"], .form input[type="date"], .form select, .form textarea {
-  font: inherit; font-size: 16px; color: var(--text); padding: 10px 14px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--bg-2); min-height: 48px; transition: border-color .15s; color-scheme: dark;
+  font: inherit; font-size: 16px; color: var(--text); padding: 10px 14px; border: 1px solid var(--field); border-radius: 10px; background: var(--bg-2); min-height: 48px; transition: border-color .15s; color-scheme: dark;
 }
 .form input:hover, .form select:hover, .form textarea:hover { border-color: var(--muted); }
 .form input:focus-visible, .form select:focus-visible, .form textarea:focus-visible { border-color: var(--pink); outline: 2px solid var(--pink); outline-offset: 2px; }
