@@ -329,7 +329,7 @@ address { font-style: normal; margin: 0 0 8px; color: var(--muted); }
 /* Sectorpagina's en FAQ */
 .sector-intro { max-width: 1000px; font-size: 18px; }
 .signup-grid { display: grid; gap: 28px; grid-template-columns: 1fr; align-items: start; margin-top: 28px; }
-.signup-aside .steps { border-top: 0; gap: 22px; }
+.signup-aside .steps { border-top: 0; gap: 22px; grid-template-columns: 1fr !important; }
 .signup-aside .steps li { padding-top: 0; }
 .signup-aside .steps li::before { display: none; }
 .signup-aside .steps .num { font-size: 30px; margin-bottom: 6px; }
