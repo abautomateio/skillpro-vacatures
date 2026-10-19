@@ -15,6 +15,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <link rel="stylesheet" href="/static/public.css">
+  <script>document.documentElement.className += " js";</script>
   <script defer src="/static/forms.js"></script>
   
 </head>
@@ -43,21 +44,21 @@
   <p class="lead">1 open vacature in zorg, beveiliging en infra. Het salaris staat erbij als de werkgever het heeft bevestigd.</p>
 </div>
 
+<div class="seg" id="sector-pills" role="group" aria-label="Sector">
+  <a href="/vacatures" class="seg-item is-active" data-sector="">Alle</a>
+  
+  <a href="/vacatures?sector=zorg" class="seg-item" data-sector="zorg">Zorg</a>
+  
+  <a href="/vacatures?sector=beveiliging" class="seg-item" data-sector="beveiliging">Beveiliging</a>
+  
+  <a href="/vacatures?sector=infra" class="seg-item" data-sector="infra">Infra</a>
+  
+  <a href="/vacatures?sector=overig" class="seg-item" data-sector="overig">Overig</a>
+  
+</div>
+
 <form class="filters" method="get" action="/vacatures" id="vacancy-filters">
-  <label>Sector
-    <select name="sector">
-      <option value="">Alle sectoren</option>
-      
-      <option value="zorg" >Zorg</option>
-      
-      <option value="beveiliging" >Beveiliging</option>
-      
-      <option value="infra" >Infra</option>
-      
-      <option value="overig" >Overig</option>
-      
-    </select>
-  </label>
+  <input type="hidden" name="sector" value="">
   <label>Provincie
     <select name="provincie">
       <option value="">Alle provincies</option>

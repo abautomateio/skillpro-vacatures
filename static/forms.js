@@ -184,6 +184,23 @@
     names.forEach(function (name) {
       if (form.elements[name] && params.get(name)) form.elements[name].value = params.get(name);
     });
+    // Sectorpillen boven het formulier zetten het verborgen veld en filteren meteen.
+    var pills = document.querySelectorAll("#sector-pills [data-sector]");
+    function markPills() {
+      Array.prototype.forEach.call(pills, function (pill) {
+        pill.classList.toggle("is-active", pill.getAttribute("data-sector") === value("sector"));
+      });
+    }
+    Array.prototype.forEach.call(pills, function (pill) {
+      pill.addEventListener("click", function (event) {
+        if (!form.elements.sector) return;
+        event.preventDefault();
+        form.elements.sector.value = pill.getAttribute("data-sector") || "";
+        markPills();
+        form.dispatchEvent(new Event("submit", { cancelable: true }));
+      });
+    });
+    markPills();
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       var next = new URLSearchParams();
@@ -205,7 +222,23 @@
     }, { rootMargin: "0px 0px -60px 0px" }).observe(target);
   }
 
+  // Secties komen in beeld terwijl je scrolt; zonder JavaScript staat alles gewoon op de pagina.
+  function reveal() {
+    var items = document.querySelectorAll("[data-reveal]");
+    if (!items.length || !("IntersectionObserver" in window)) {
+      Array.prototype.forEach.call(items, function (el) { el.classList.add("in"); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("in"); observer.unobserve(entry.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    Array.prototype.forEach.call(items, function (el) { observer.observe(el); });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    reveal();
     Array.prototype.forEach.call(document.querySelectorAll("form.form[data-kind]"), function (form) {
       var button = form.querySelector('button[type="submit"]');
       if (button) button.dataset.label = button.textContent;

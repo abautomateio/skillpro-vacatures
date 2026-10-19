@@ -15,6 +15,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <link rel="stylesheet" href="/static/public.css">
+  <script>document.documentElement.className += " js";</script>
   <script defer src="/static/forms.js"></script>
   
 </head>
@@ -48,10 +49,20 @@
     </div>
     <p class="note rise rise-5">Werving en selectie vanuit Ede. We bellen je binnen twee werkdagen, en het kost je niets.</p>
   </div>
-  <div class="orb rise rise-3" aria-hidden="true"><span class="orb-c"></span><span class="orb-a"></span><span class="orb-b"></span></div>
+  <div class="hero-visual rise rise-3" aria-hidden="true">
+    <div class="mark"><span class="mark-a"></span></div>
+    
+    <div class="float-card float-1">
+      <span class="fc-new">Nieuw</span>
+      <p class="fc-title">Beveiliger in Ede</p>
+      <p class="fc-meta">Ede · 32-40 uur · tijdelijk contract</p>
+      <p class="fc-salary">€ 2.750 tot € 3.350 bruto per maand</p>
+    </div>
+    
+  </div>
 </section>
 
-<ul class="sectors" aria-label="Kies jouw sector">
+<ul class="sectors" aria-label="Kies jouw sector" data-reveal>
   
   <li>
     <a class="sector-card" href="/zorg">
@@ -85,11 +96,11 @@
   
 </ul>
 
-<div class="section-head">
+<div class="section-head" data-reveal>
   <div><span class="eyebrow">Open nu</span><h2>Nieuwste vacatures</h2></div>
   <a class="more-link" href="/vacatures">Alle vacatures</a>
 </div>
-
+<div data-reveal>
 <ul class="vacancy-list" id="vacancy-list">
   
   <li data-sector="beveiliging" data-province="Gelderland" data-hours="24-32 32plus">
@@ -114,22 +125,25 @@
 
 <div class="empty" id="no-match" hidden>
   <p>Geen vacatures voor deze keuze. <a href="/vacatures">Toon alle vacatures</a>.</p>
-</div>
+</div></div>
 
-<div class="duo">
-  <section>
-    <span class="eyebrow">Voor kandidaten</span>
-    <h2>Zo werkt het</h2>
-    <p>Je solliciteert bij ons, in een minuut en zonder cv als je dat nog niet bij de hand hebt. We bellen je binnen twee werkdagen over uren, reistijd en wat je zoekt. Past het, dan regelen we de kennismaking bij de werkgever; je contract teken je daar. Het kost je niets.</p>
-    <a class="button" href="/inschrijven">Inschrijven</a>
-  </section>
-  <section class="employer">
+<section class="steps-section" data-reveal>
+  <div class="section-head"><div><span class="eyebrow">Voor kandidaten</span><h2>Zo werkt het</h2></div></div>
+  <ol class="steps">
+    <li><span class="num">01</span><h3>Je solliciteert</h3><p>In een minuut, via de vacature of de inschrijving. Een cv mag ook later.</p></li>
+    <li><span class="num">02</span><h3>Wij bellen binnen twee werkdagen</h3><p>Over uren, reistijd en wat je zoekt. Eerlijk, ook als het niet past.</p></li>
+    <li><span class="num">03</span><h3>Kennismaken bij de werkgever</h3><p>Meestal binnen een week. Je contract teken je daar; het kost je niets.</p></li>
+  </ol>
+</section>
+
+<section class="band-employer panel" data-reveal>
+  <div>
     <span class="eyebrow">Voor werkgevers</span>
-    <h2>Zoek je mensen?</h2>
-    <p>SkillPro werft en selecteert op basis van skills, passie en betrouwbaarheid, in zorg, beveiliging en infra. Vertel ons wie je zoekt; wij kennen de kandidaten.</p>
-    <a class="button outline" href="https://www.skillpro.nl/contact" rel="noopener">Neem contact op</a>
-  </section>
-</div>
+    <h2>Zoek je mensen in zorg, beveiliging of infra?</h2>
+    <p>SkillPro werft en selecteert op basis van skills, passie en betrouwbaarheid. Vertel ons wie je zoekt; wij kennen de kandidaten en stellen ze voor als het past.</p>
+  </div>
+  <a class="button outline" href="https://www.skillpro.nl/contact" rel="noopener">Neem contact op</a>
+</section>
 
   </main>
 
