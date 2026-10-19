@@ -82,7 +82,7 @@ p { margin: 0 0 8px; }
 .button:hover { background: var(--brand-strong); }
 .button:active { transform: translateY(1px); }
 .button:disabled { opacity: .6; cursor: default; }
-.button.secondary { background: var(--surface); border: 1px solid var(--line-strong); color: var(--ink); }
+.button.secondary { background: var(--surface); border: 1px solid var(--line-field); color: var(--ink); }
 .button.secondary:hover { background: var(--surface-2); border-color: var(--line-field); }
 .button.light { background: var(--surface); color: var(--ink); }
 .button.light:hover { background: var(--brand-soft); }
