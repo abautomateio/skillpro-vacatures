@@ -2,6 +2,7 @@
 // Skillpro, zonder dat de kantoorcomputer aan internet hangt. Zonder JavaScript verstuurt de
 // browser het formulier zelf (tekstvelden; het CV gaat dan niet mee).
 // Fouten worden per veld gemeld bij het verzenden, niet tijdens het typen (docs/08 punt 18).
+// Geen onthullen-bij-scrollen: de pagina staat er gewoon (review art director, 20 oktober 2026).
 (function () {
   "use strict";
 
@@ -15,7 +16,7 @@
     functies: "Vul in welk werk je zoekt.",
     woonplaats: "Vul je woonplaats of postcode in.",
     bericht: "Houd je bericht korter dan 2000 tekens.",
-    toestemming: "Zonder toestemming kunnen we je gegevens niet bewaren."
+    toestemming: "Zonder je toestemming mogen we je gegevens niet bewaren."
   };
 
   function readFile(file) {
@@ -117,7 +118,7 @@
 
   function setBusy(form, busy) {
     var button = form.querySelector('button[type="submit"]');
-    if (button) { button.disabled = busy; button.textContent = busy ? "Bezig met versturen" : button.dataset.label || button.textContent; }
+    if (button) { button.disabled = busy; button.textContent = busy ? "Even geduld" : button.dataset.label || button.textContent; }
   }
 
   function handle(form) {
@@ -146,7 +147,7 @@
         location.href = "/bedankt/" + (form.getAttribute("data-kind") === "sollicitatie" ? "sollicitatie" : "inschrijving") + "/";
       }).catch(function (error) {
         setBusy(form, false);
-        summary(form, error && error.message ? error.message : "Versturen is niet gelukt. Probeer het later opnieuw of mail naar info@skillpro.nl.");
+        summary(form, error && error.message ? error.message : "Versturen is niet gelukt. Probeer het nog een keer, of mail je gegevens naar info@skillpro.nl.");
       });
     });
     // Na een mislukte poging verdwijnt een fout zodra het veld is verbeterd (bij verlaten van het veld).
@@ -224,27 +225,7 @@
     }, { rootMargin: "0px 0px -60px 0px" }).observe(target);
   }
 
-  // Secties komen in beeld terwijl je scrolt; zonder JavaScript staat alles gewoon op de pagina.
-  function reveal() {
-    var items = document.querySelectorAll("[data-reveal]");
-    if (!items.length || !("IntersectionObserver" in window)) {
-      Array.prototype.forEach.call(items, function (el) { el.classList.add("in"); });
-      return;
-    }
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add("in"); observer.unobserve(entry.target); }
-      });
-    }, { rootMargin: "0px 0px -5% 0px", threshold: 0 });
-    Array.prototype.forEach.call(items, function (el) { observer.observe(el); });
-    // Vangnet: na een paar seconden staat alles hoe dan ook op de pagina.
-    setTimeout(function () {
-      Array.prototype.forEach.call(items, function (el) { el.classList.add("in"); observer.unobserve(el); });
-    }, 2500);
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
-    reveal();
     Array.prototype.forEach.call(document.querySelectorAll("form.form[data-kind]"), function (form) {
       var button = form.querySelector('button[type="submit"]');
       if (button) button.dataset.label = button.textContent;
