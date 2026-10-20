@@ -124,8 +124,23 @@ address { font-style: normal; margin: 0 0 8px; color: var(--muted); }
 .hero-text .pill { margin-bottom: 24px; }
 .hero h1 { font-size: var(--t-60); max-width: 14ch; margin-bottom: 20px; }
 .hero .sub { font-size: var(--t-20); color: var(--text-2); max-width: 36ch; margin: 0; }
-.hero-mark { position: absolute; right: -14%; bottom: -40%; width: clamp(520px, 50vw, 820px); aspect-ratio: 1; pointer-events: none; }
-.hero-mark svg { display: block; width: 100%; height: 100%; filter: drop-shadow(0 40px 80px rgba(122, 31, 224, .45)); }
+/* Het merkteken uit het logobestand, met daarop de nieuwste vacatures als zwevende, klikbare kaartjes */
+.hero-visual { position: relative; width: min(100%, 480px); aspect-ratio: 1; margin: 0 auto; justify-self: end; }
+.hero-visual::before { content: ""; position: absolute; inset: 8%; border-radius: 50%; background: var(--gradient-logo); filter: blur(80px); opacity: .38; }
+.mark-img { position: absolute; inset: 14% 10% 10% 14%; width: 76%; height: 76%; object-fit: contain; filter: drop-shadow(0 40px 70px rgba(122, 31, 224, .55)); animation: breathe 9s ease-in-out infinite; }
+.float-card { position: absolute; z-index: 2; display: block; width: min(62%, 260px); background: rgba(10, 1, 24, .78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, .16); border-radius: var(--r-panel); padding: 12px 14px 11px; text-decoration: none; color: var(--text); box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .7); animation: floaty 7s ease-in-out infinite; transition: border-color .2s, transform .2s, box-shadow .2s; }
+.float-card:hover { border-color: var(--pink); color: var(--text); box-shadow: 0 30px 60px -20px rgba(255, 127, 194, .45); animation-play-state: paused; transform: translateY(-4px) scale(1.02); }
+.float-card:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+.float-1 { left: -6%; bottom: 10%; animation-duration: 7.5s; animation-delay: -2.5s; }
+.float-2 { right: -4%; top: 6%; animation-duration: 6.5s; animation-delay: -5s; }
+.float-3 { right: -2%; bottom: -6%; animation-duration: 8.5s; animation-delay: -1s; width: min(54%, 230px); }
+.float-card span { display: block; }
+.float-card .fc-title { font-family: var(--font-head); font-weight: 600; font-size: var(--t-15); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.float-card .fc-meta { font-size: 12px; color: var(--muted); margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.float-card .fc-salary { font-family: var(--font-head); font-weight: 600; font-size: var(--t-13); color: var(--pink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.float-card .fc-new { position: absolute; top: -10px; right: 12px; background: var(--gradient); color: var(--bg); font-family: var(--font-head); font-weight: 700; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; padding: 3px 8px; border-radius: var(--r-pill); }
+@keyframes floaty { 0%, 100% { transform: translateY(0) rotate(-.4deg); } 50% { transform: translateY(-12px) rotate(.4deg); } }
+@keyframes breathe { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-6px) scale(1.015); } }
 
 /* Sectoren: één strook van drie kolommen */
 .sectors { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -324,7 +339,7 @@ address { font-style: normal; margin: 0 0 8px; color: var(--muted); }
   .site-footer .cols { grid-template-columns: 1.4fr 1fr 1fr; }
 }
 @media (min-width: 880px) {
-  .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); padding: 96px 0 72px; min-height: 560px; }
+  .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); padding: 80px 0 48px; align-items: center; }
   .sector-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
   .sector-intro p { margin: 0; }
   .band-employer { grid-template-columns: minmax(0, 1fr) auto; padding: 40px; }
@@ -341,7 +356,10 @@ address { font-style: normal; margin: 0 0 8px; color: var(--muted); }
 }
 @media (max-width: 639px) {
   .hero { padding: 48px 0 24px; }
-  .hero-mark { display: none; }
+  .hero-visual { width: min(84%, 320px); margin-top: 8px; }
+  .float-card { width: min(70%, 220px); padding: 10px 12px 9px; }
+  .float-3 { display: none; }
+  .float-1 { left: -8%; bottom: 2%; }
   .logo img { height: 32px; }
   .site-header .row { min-height: 64px; }
   .nav { gap: 0 16px; }
