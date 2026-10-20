@@ -375,11 +375,11 @@ address { font-style: normal; margin: 0 0 8px; color: var(--muted); }
 }
 @media (max-width: 639px) {
   .hero { padding: 48px 0 24px; }
-  .hero-visual { width: min(92%, 340px); margin-top: 8px; aspect-ratio: auto; height: calc(92px + var(--slot) * 3 - 12px); --card-h: 124px; --slot: calc(var(--card-h) + 12px); }
-  .mark { left: 0; top: 0; width: 46%; }
-  .deck { width: 68%; top: 92px; translate: 0 0; height: calc(var(--slot) * 3 - 12px); }
+  .hero-visual { width: min(92%, 340px); margin-top: 8px; aspect-ratio: auto; height: calc(88px + var(--slot) * 3 - 12px); --card-h: 136px; --slot: calc(var(--card-h) + 12px); }
+  .mark { left: 0; top: 0; width: 42%; }
+  .deck { width: 76%; top: 88px; translate: 0 0; height: calc(var(--slot) * 3 - 12px); }
   .float-card { padding: 10px 12px; }
-  .float-card .fc-meta { white-space: normal; }
+  .float-card .fc-meta, .float-card .fc-salary { white-space: normal; }
   .float-card .arrow { width: 26px; height: 26px; font-size: 13px; }
   .logo img { height: 32px; }
   .site-header .row { min-height: 64px; }
