@@ -225,8 +225,8 @@
     }, { rootMargin: "0px 0px -60px 0px" }).observe(target);
   }
 
-  // De hero op de startpagina: het merkteken kantelt licht mee met de muis en de vacaturekaartjes
-  // verschuiven op verschillende diepte (alleen met een muis, niet bij "minder beweging").
+  // De hero op de startpagina: het merkteken kantelt licht mee met de muis
+  // (alleen met een muis, niet bij "minder beweging").
   function heroParallax() {
     var visual = document.querySelector("[data-parallax]");
     if (!visual || !window.matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)").matches) return;
