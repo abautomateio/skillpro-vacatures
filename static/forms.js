@@ -225,6 +225,30 @@
     }, { rootMargin: "0px 0px -60px 0px" }).observe(target);
   }
 
+  // De hero op de startpagina: het merkteken kantelt licht mee met de muis en de vacaturekaartjes
+  // verschuiven op verschillende diepte (alleen met een muis, niet bij "minder beweging").
+  function heroParallax() {
+    var visual = document.querySelector("[data-parallax]");
+    if (!visual || !window.matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)").matches) return;
+    var hero = visual.closest(".hero") || visual;
+    var x = 0, y = 0, frame = 0;
+    function apply() {
+      frame = 0;
+      visual.style.setProperty("--mx", x.toFixed(3));
+      visual.style.setProperty("--my", y.toFixed(3));
+    }
+    hero.addEventListener("pointermove", function (event) {
+      var box = hero.getBoundingClientRect();
+      x = Math.max(-1, Math.min(1, ((event.clientX - box.left) / box.width - 0.5) * 2));
+      y = Math.max(-1, Math.min(1, ((event.clientY - box.top) / box.height - 0.5) * 2));
+      if (!frame) frame = requestAnimationFrame(apply);
+    });
+    hero.addEventListener("pointerleave", function () {
+      x = 0; y = 0;
+      if (!frame) frame = requestAnimationFrame(apply);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     Array.prototype.forEach.call(document.querySelectorAll("form.form[data-kind]"), function (form) {
       var button = form.querySelector('button[type="submit"]');
@@ -233,5 +257,6 @@
     });
     filters();
     applyBar();
+    heroParallax();
   });
 })();
