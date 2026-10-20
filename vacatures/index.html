@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vacatures · Skillpro vacatures</title>
-  <meta name="description" content="Vacatures in zorg, beveiliging en infra via Skillpro, werving en selectie vanuit Ede. Je contract krijg je bij de werkgever zelf.">
+  <meta name="description" content="Vacatures in zorg, beveiliging en infra via Skillpro in Ede. Wij kennen de werkgever, jij tekent daar je contract. We bellen binnen twee werkdagen.">
   <meta name="theme-color" content="#0F0520">
   
   <link rel="icon" href="/static/img/favicon-32.png" type="image/png" sizes="32x32">
@@ -15,7 +15,6 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <link rel="stylesheet" href="/static/public.css">
-  <script>document.documentElement.className += " js";</script>
   <script defer src="/static/forms.js"></script>
   
 </head>
@@ -31,76 +30,77 @@
         <a class="nav-sector" href="/zorg" >Zorg</a>
         <a class="nav-sector" href="/beveiliging" >Beveiliging</a>
         <a class="nav-sector" href="/infra" >Infra</a>
-        <a class="button small" href="/inschrijven" >Inschrijven</a>
+        <a class="nav-cta" href="/inschrijven" >Inschrijven</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap" id="inhoud" tabindex="-1">
     
-<div class="page-head">
-  <span class="pill rise">Vacatures</span>
-  <h1 class="rise rise-2">Alle open vacatures</h1>
-  <p class="lead"><span id="vacancy-count" data-one="open vacature" data-many="open vacatures">1 open vacature</span> in zorg, beveiliging en infra. Het salaris staat erbij als de werkgever het heeft bevestigd.</p>
+<div class="page-head page-head-list">
+  <span class="eyebrow primary rise">Vacatures</span>
+  <h1 class="rise rise-2"><span id="vacancy-count" data-one="vacature open" data-many="vacatures open">1 vacature open</span><span class="dot">.</span></h1>
+  <p class="lead">In zorg, beveiliging en infra. Het salaris staat erbij zodra de werkgever het aan ons heeft bevestigd.</p>
 </div>
 
-<div class="seg" id="sector-pills" role="group" aria-label="Sector">
-  <a href="/vacatures" class="seg-item is-active" data-sector="">Alle</a>
-  
-  <a href="/vacatures?sector=zorg" class="seg-item" data-sector="zorg">Zorg</a>
-  
-  <a href="/vacatures?sector=beveiliging" class="seg-item" data-sector="beveiliging">Beveiliging</a>
-  
-  <a href="/vacatures?sector=infra" class="seg-item" data-sector="infra">Infra</a>
-  
+<div class="filter-row">
+  <div class="seg" id="sector-pills" role="group" aria-label="Sector">
+    <a href="/vacatures" class="seg-item is-active" data-sector="">Alle</a>
+    
+    <a href="/vacatures?sector=zorg" class="seg-item" data-sector="zorg">Zorg</a>
+    
+    <a href="/vacatures?sector=beveiliging" class="seg-item" data-sector="beveiliging">Beveiliging</a>
+    
+    <a href="/vacatures?sector=infra" class="seg-item" data-sector="infra">Infra</a>
+    
+  </div>
+  <form class="filters" method="get" action="/vacatures" id="vacancy-filters">
+    <input type="hidden" name="sector" value="">
+    <label><span class="sr-only">Provincie</span>
+      <select name="provincie">
+        <option value="">Alle provincies</option>
+        
+        <option value="Drenthe" >Drenthe</option>
+        
+        <option value="Flevoland" >Flevoland</option>
+        
+        <option value="Friesland" >Friesland</option>
+        
+        <option value="Gelderland" >Gelderland</option>
+        
+        <option value="Groningen" >Groningen</option>
+        
+        <option value="Limburg" >Limburg</option>
+        
+        <option value="Noord-Brabant" >Noord-Brabant</option>
+        
+        <option value="Noord-Holland" >Noord-Holland</option>
+        
+        <option value="Overijssel" >Overijssel</option>
+        
+        <option value="Utrecht" >Utrecht</option>
+        
+        <option value="Zeeland" >Zeeland</option>
+        
+        <option value="Zuid-Holland" >Zuid-Holland</option>
+        
+      </select>
+    </label>
+    <label><span class="sr-only">Uren per week</span>
+      <select name="uren">
+        <option value="">Alle uren</option>
+        
+        <option value="tot24" >Tot 24 uur</option>
+        
+        <option value="24-32" >24 tot 32 uur</option>
+        
+        <option value="32plus" >32 uur en meer</option>
+        
+      </select>
+    </label>
+    <button class="button outline small" type="submit">Filteren</button>
+  </form>
 </div>
-
-<form class="filters" method="get" action="/vacatures" id="vacancy-filters">
-  <input type="hidden" name="sector" value="">
-  <label>Provincie
-    <select name="provincie">
-      <option value="">Alle provincies</option>
-      
-      <option value="Drenthe" >Drenthe</option>
-      
-      <option value="Flevoland" >Flevoland</option>
-      
-      <option value="Friesland" >Friesland</option>
-      
-      <option value="Gelderland" >Gelderland</option>
-      
-      <option value="Groningen" >Groningen</option>
-      
-      <option value="Limburg" >Limburg</option>
-      
-      <option value="Noord-Brabant" >Noord-Brabant</option>
-      
-      <option value="Noord-Holland" >Noord-Holland</option>
-      
-      <option value="Overijssel" >Overijssel</option>
-      
-      <option value="Utrecht" >Utrecht</option>
-      
-      <option value="Zeeland" >Zeeland</option>
-      
-      <option value="Zuid-Holland" >Zuid-Holland</option>
-      
-    </select>
-  </label>
-  <label>Uren per week
-    <select name="uren">
-      <option value="">Alle uren</option>
-      
-      <option value="tot24" >Tot 24 uur</option>
-      
-      <option value="24-32" >24 tot 32 uur</option>
-      
-      <option value="32plus" >32 uur en meer</option>
-      
-    </select>
-  </label>
-  <button class="button outline" type="submit">Filteren</button>
-</form>
 
 
 <ul class="vacancy-list" id="vacancy-list">
@@ -109,10 +109,10 @@
     <div class="row-main">
       <h3><a href="/vacatures/beveiliger-in-ede">Beveiliger in Ede</a></h3>
       <p class="meta">
+        <span>Beveiliging</span>
         <span>Ede</span>
         <span>32-40 uur</span>
         <span>tijdelijk contract</span>
-        <span class="sector-tag">Beveiliging</span>
       </p>
     </div>
     <div class="row-side">
@@ -126,7 +126,7 @@
 
 
 <div class="empty" id="no-match" hidden>
-  <p>Geen vacatures voor deze keuze. <a href="/vacatures">Toon alle vacatures</a>.</p>
+  <p>Met deze keuze is er niets. <a href="/vacatures">Toon alle vacatures</a>, of <a href="/inschrijven">schrijf je in</a>; dan bellen we zodra er wel iets is.</p>
 </div>
 
   </main>
@@ -136,7 +136,7 @@
       <div class="cols">
         <div class="about">
           <img src="/static/img/logo-breed-wit.png" alt="Skillpro" width="210" height="96">
-          <p>SkillPro is dé SkilledBased matchmaker in zorg, beveiliging en infra. Werving en selectie vanuit Ede, voor heel Nederland. Je contract krijg je bij de werkgever zelf.</p>
+          <p>Skillpro zoekt mensen voor werkgevers in de zorg, de beveiliging en de infra. Vanuit Ede, voor heel Nederland. Je solliciteert bij ons, je contract teken je bij de werkgever.</p>
           <p><a href="https://www.skillpro.nl" rel="noopener">www.skillpro.nl</a></p>
         </div>
         <div>
@@ -155,7 +155,7 @@
         </div>
       </div>
       <div class="bottom">
-        <span>Copyright © 2026 SkillPro B.V., alle rechten voorbehouden.</span>
+        <span>© 2026 SkillPro B.V.</span>
         <a href="https://www.skillpro.nl/privacyverklaring" rel="noopener">Privacyverklaring</a>
       </div>
     </div>

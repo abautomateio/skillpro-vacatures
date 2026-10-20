@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inschrijven · Skillpro vacatures</title>
-  <meta name="description" content="Vacatures in zorg, beveiliging en infra via Skillpro, werving en selectie vanuit Ede. Je contract krijg je bij de werkgever zelf.">
+  <meta name="description" content="Vacatures in zorg, beveiliging en infra via Skillpro in Ede. Wij kennen de werkgever, jij tekent daar je contract. We bellen binnen twee werkdagen.">
   <meta name="theme-color" content="#0F0520">
   
   <link rel="icon" href="/static/img/favicon-32.png" type="image/png" sizes="32x32">
@@ -15,7 +15,6 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <link rel="stylesheet" href="/static/public.css">
-  <script>document.documentElement.className += " js";</script>
   <script defer src="/static/forms.js"></script>
   <meta name="robots" content="noindex">
 </head>
@@ -31,7 +30,7 @@
         <a class="nav-sector" href="/zorg" >Zorg</a>
         <a class="nav-sector" href="/beveiliging" >Beveiliging</a>
         <a class="nav-sector" href="/infra" >Infra</a>
-        <a class="button small" href="/inschrijven" aria-current="page">Inschrijven</a>
+        <a class="nav-cta" href="/inschrijven" aria-current="page">Inschrijven</a>
       </nav>
     </div>
   </header>
@@ -39,19 +38,19 @@
   <main class="wrap" id="inhoud" tabindex="-1">
     
 <div class="page-head">
-  <span class="pill rise">Inschrijven</span>
-  <h1 class="rise rise-2">Schrijf je in</h1>
-  <p class="lead">Geen passende vacature gezien? Schrijf je in. We bellen zodra er een vacature is die bij je past, en niet eerder.</p>
+  <span class="eyebrow primary rise">Inschrijven</span>
+  <h1 class="rise rise-2">Schrijf je in<span class="dot">.</span></h1>
+  <p class="lead">Geen vacature gezien die past? Schrijf je in. We bellen je binnen twee werkdagen om te horen wat je zoekt. Daarna hoor je van ons zodra er een vacature is die bij je past, en niet eerder.</p>
 </div>
 
 <div class="signup-grid">
-<section class="form-section panel">
-  <p class="muted form-intro">Duurt een minuut. Alleen de velden met "verplicht" zijn nodig; de rest bespreken we aan de telefoon.</p>
+<section class="form-section">
+  <p class="muted form-intro">Duurt een minuut. Vul in wat je weet; de rest vragen we aan de telefoon.</p>
   
 <noscript>
   <style>.form[data-kind] { display: none; }</style>
   <div class="nojs">
-    <p><strong>JavaScript staat uit, dus dit formulier werkt niet.</strong> Mail je gegevens, dan bellen we je binnen twee werkdagen.</p>
+    <p><strong>Dit formulier werkt niet zonder JavaScript.</strong> Mail ons je gegevens, dan bellen we je binnen twee werkdagen.</p>
     <p>
       
       <a class="button" href="mailto:info@skillpro.nl?subject=Inschrijving&amp;body=Voornaam%3A%0ATelefoonnummer%3A%0AE-mailadres%3A%0AWoonplaats%3A%0AWelk%20werk%20zoek%20je%3A%0A%0AIk%20geef%20Skillpro%20toestemming%20om%20mijn%20gegevens%2012%20maanden%20te%20bewaren%20om%20mij%20te%20bemiddelen%20naar%20werk.">Mail je inschrijving</a>
@@ -66,32 +65,32 @@
       <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
     </div>
     <div class="two">
-      <label>Voornaam <span class="opt">(verplicht)</span>
+      <label>Voornaam
         <input type="text" name="voornaam" value="" required autocomplete="given-name" autocapitalize="words" autocorrect="off" spellcheck="false">
         
       </label>
-      <label>Telefoonnummer
+      <label>Telefoonnummer <span class="opt">(optioneel)</span> <span class="hint">Zodat we je kunnen bellen.</span>
         <input type="tel" name="telefoon" value="" autocomplete="tel">
       </label>
-      <label>E-mailadres <span class="opt">(verplicht)</span>
+      <label>E-mailadres
         <input type="email" name="email" value="" required autocomplete="email" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false">
         
       </label>
-      <label>Woonplaats <span class="opt">(verplicht)</span>
+      <label>Woonplaats
         <input type="text" name="woonplaats" value="" required autocomplete="address-level2" autocapitalize="words" autocorrect="off" spellcheck="false">
         
       </label>
     </div>
-    <label>Welk werk zoek je? <span class="opt">(verplicht)</span> <span class="hint">Meerdere functies met komma's ertussen</span>
-      <input type="text" name="functies" value="" required placeholder="Bijvoorbeeld: verzorgende IG, verpleegkundige">
+    <label>Welk werk zoek je? <span class="hint">Bijvoorbeeld verzorgende IG, of beveiliger voor de nachten. Meer dan één mag.</span>
+      <input type="text" name="functies" value="" required>
       
     </label>
-    <label>Cv <span class="hint">PDF of Word, maximaal 10 MB; mag ook later</span>
+    <label>Cv <span class="opt">(optioneel)</span> <span class="hint">PDF of Word, tot 10 MB. Mag ook later.</span>
       <input type="file" name="cv" accept=".pdf,.doc,.docx,.txt">
       
     </label>
     <details class="more">
-      <summary>Meer vertellen <span class="opt">(optioneel)</span></summary>
+      <summary>Meer over wat je zoekt <span class="opt">(mag ook aan de telefoon)</span></summary>
       <div class="more-fields">
         <div class="two">
           <label>Achternaam
@@ -100,7 +99,7 @@
           <label>Postcode
             <input type="text" name="postcode" value="" autocomplete="postal-code" autocapitalize="characters" autocorrect="off" spellcheck="false">
           </label>
-          <label>Hoe ver wil je reizen?
+          <label>Hoe ver van huis mag het werk zijn?
             <select name="straal">
               
               <option value="10" >Tot 10 km</option>
@@ -115,18 +114,18 @@
               
             </select>
           </label>
-          <label>Beschikbaar per
+          <label>Vanaf wanneer kun je beginnen?
             <input type="date" name="beschikbaar" value="">
           </label>
-          <label>Uren per week, van
+          <label>Hoeveel uur per week, minstens
             <input type="number" name="uren_min" min="0" max="60" inputmode="numeric" value="">
           </label>
-          <label>tot
+          <label>En hoogstens
             <input type="number" name="uren_max" min="0" max="60" inputmode="numeric" value="">
           </label>
         </div>
         <fieldset>
-          <legend>Soort werk</legend>
+          <legend>Wat voor contract zoek je?</legend>
           
           <label class="check inline"><input type="checkbox" name="dienstverband" value="vast" > <span>Vast contract</span></label>
           
@@ -145,25 +144,25 @@
     </label>
     
     <p class="notice" role="alert" data-form-error hidden></p>
-    <button class="button" type="submit">Inschrijven</button>
+    <button class="button" type="submit">Verstuur inschrijving</button>
   </form>
 </section>
 <aside class="signup-aside">
-  <span class="eyebrow">Wat gebeurt er daarna</span>
+  <span class="eyebrow">Na je inschrijving</span>
   <ol class="steps">
-    <li><span class="num">01</span><h3>We bellen je</h3><p>Binnen twee werkdagen, over uren, reistijd en wat je zoekt.</p></li>
-    <li><span class="num">02</span><h3>We zoeken mee</h3><p>Zodra er een vacature is die past, hoor je het. Niet eerder.</p></li>
-    <li><span class="num">03</span><h3>Kennismaken</h3><p>Bij de werkgever, meestal binnen een week. Je contract teken je daar.</p></li>
+    <li><span class="num">01</span><h3>We bellen je</h3><p>Binnen twee werkdagen. Een kort gesprek over wat je zoekt: welk werk, hoeveel uur, hoe ver.</p></li>
+    <li><span class="num">02</span><h3>We houden je in gedachten</h3><p>Zodra er een vacature is die past, bellen we. Niet eerder, en niet voor iets anders.</p></li>
+    <li><span class="num">03</span><h3>Je gaat op gesprek</h3><p>Bij de werkgever, meestal binnen een week. Je contract teken je daar.</p></li>
   </ol>
   <div class="contact">
-    <p>Liever eerst even mailen? <a href="mailto:info@skillpro.nl">info@skillpro.nl</a></p>
-    <p>Je gegevens bewaren we twaalf maanden; intrekken kan altijd.</p>
+    <p>Liever eerst mailen? <a href="mailto:info@skillpro.nl">info@skillpro.nl</a></p>
+    <p>Je gegevens bewaren we twaalf maanden. Wil je eerder uit ons bestand? Eén mail is genoeg.</p>
   </div>
 </aside>
 </div>
 
 <section class="faq-section">
-  <div class="section-head"><div><span class="eyebrow">Goed om te weten</span><h2>Veelgestelde vragen</h2></div></div>
+  <div class="section-head"><div><span class="eyebrow">Goed om te weten</span><h2>Wat we vaak gevraagd krijgen</h2></div></div>
   <dl class="faq">
   
   <div>
@@ -201,7 +200,7 @@
       <div class="cols">
         <div class="about">
           <img src="/static/img/logo-breed-wit.png" alt="Skillpro" width="210" height="96">
-          <p>SkillPro is dé SkilledBased matchmaker in zorg, beveiliging en infra. Werving en selectie vanuit Ede, voor heel Nederland. Je contract krijg je bij de werkgever zelf.</p>
+          <p>Skillpro zoekt mensen voor werkgevers in de zorg, de beveiliging en de infra. Vanuit Ede, voor heel Nederland. Je solliciteert bij ons, je contract teken je bij de werkgever.</p>
           <p><a href="https://www.skillpro.nl" rel="noopener">www.skillpro.nl</a></p>
         </div>
         <div>
@@ -220,7 +219,7 @@
         </div>
       </div>
       <div class="bottom">
-        <span>Copyright © 2026 SkillPro B.V., alle rechten voorbehouden.</span>
+        <span>© 2026 SkillPro B.V.</span>
         <a href="https://www.skillpro.nl/privacyverklaring" rel="noopener">Privacyverklaring</a>
       </div>
     </div>
