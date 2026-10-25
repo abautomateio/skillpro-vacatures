@@ -83,7 +83,8 @@
     }
     if (!EMAIL_RE.test(String(data.email || "").trim())) errors.email = MESSAGES.email;
     if (String(data.bericht || "").length > 2000) errors.bericht = MESSAGES.bericht;
-    if (!data.toestemming) errors.toestemming = MESSAGES.toestemming;
+    // Signing up needs the consent; applying never depends on it (art. 7 lid 4 AVG).
+    if (kind !== "sollicitatie" && !data.toestemming) errors.toestemming = MESSAGES.toestemming;
     var fileInput = form.querySelector('input[type="file"]');
     var file = fileInput && fileInput.files && fileInput.files[0];
     if (file) {
