@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vacatures · Skillpro vacatures</title>
-  <meta name="description" content="Vacatures in zorg, beveiliging en infra via Skillpro in Ede. Wij kennen de werkgever, jij tekent daar je contract. We bellen binnen twee werkdagen.">
-  <meta name="theme-color" content="#0F0520">
+  <meta name="description" content="Vacatures in zorg, beveiliging, infra, IT en logistiek via SkillPro in Ede. Je solliciteert bij ons, je contract teken je bij de werkgever. We bellen binnen twee werkdagen.">
+  <meta name="theme-color" content="#0E0719">
   
   <link rel="icon" href="/static/img/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png">
-  <link rel="preload" href="/static/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/static/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta property="og:image" content="https://vacatures.skillpro.nl/static/img/og-default.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -20,27 +20,72 @@
 </head>
 <body>
   <a class="skip" href="#inhoud">Naar de inhoud</a>
+  
   <header class="site-header">
-    <div class="wrap row">
-      <a class="logo" href="/" aria-label="Skillpro, naar de startpagina">
-        <img src="/static/img/logo-breed-wit.png" alt="Skillpro" width="210" height="96">
+    <div class="wrap bar">
+      <a class="logo" href="/" aria-label="SkillPro vacatures, naar de startpagina">
+        <picture>
+          <source type="image/webp" srcset="/static/img/logo-160.webp 160w, /static/img/logo-320.webp 320w" sizes="112px">
+          <img src="/static/img/logo-320.png" srcset="/static/img/logo-160.png 160w, /static/img/logo-320.png 320w" sizes="112px" width="790" height="349" alt="SkillPro">
+        </picture>
+        <span class="division">Vacatures</span>
       </a>
       <nav class="nav" aria-label="Hoofdnavigatie">
-        <a href="/vacatures" aria-current="page">Vacatures</a>
-        <a class="nav-sector" href="/zorg" >Zorg</a>
-        <a class="nav-sector" href="/beveiliging" >Beveiliging</a>
-        <a class="nav-sector" href="/infra" >Infra</a>
-        <a class="nav-cta" href="/inschrijven" >Inschrijven</a>
+        <ul class="menu">
+          
+          <li><a href="/zorg"><span>Zorg</span></a></li>
+          
+          <li><a href="/beveiliging"><span>Beveiliging</span></a></li>
+          
+          <li><a href="/infra"><span>Infrastructuur</span></a></li>
+          
+          <li><a href="/it"><span>IT</span></a></li>
+          
+          <li><a href="/logistiek"><span>Logistiek</span></a></li>
+          
+          <li><a href="/vacatures" class="is-active" aria-current="page"><span>Alle vacatures</span></a></li>
+          <li><a href="https://skillpro.nl/nieuws/" rel="noopener"><span>Nieuws</span><svg class="icon ext" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        </ul>
       </nav>
+      <div class="header-actions">
+        <a class="btn btn--sm btn--ghost header-cta2" href="https://skillpro.nl/contact/" rel="noopener">Contact</a>
+        <a class="btn btn--sm header-cta" href="/inschrijven">Inschrijven</a>
+        <details class="mnav">
+          <summary class="menu-toggle"><span class="sr-only">Menu</span><span class="burger" aria-hidden="true"><i></i><i></i></span></summary>
+          <div class="mnav-panel">
+            <ul>
+              
+              <li><a href="/zorg">Zorg<svg class="icon go" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              
+              <li><a href="/beveiliging">Beveiliging<svg class="icon go" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              
+              <li><a href="/infra">Infrastructuur<svg class="icon go" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              
+              <li><a href="/it">IT<svg class="icon go" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              
+              <li><a href="/logistiek">Logistiek<svg class="icon go" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              
+              <li><a href="/vacatures" aria-current="page">Alle vacatures<svg class="icon go" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              <li><a href="https://skillpro.nl/nieuws/" rel="noopener">Nieuws<svg class="icon go" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            </ul>
+            <div class="mnav-cta">
+              <a class="other" href="https://skillpro.nl/" rel="noopener"><svg class="icon back" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Naar skillpro.nl</a>
+              <a class="btn btn--block btn--ghost" href="https://skillpro.nl/contact/" rel="noopener">Contact</a>
+              <a class="btn btn--block" href="/inschrijven">Inschrijven</a>
+            </div>
+          </div>
+        </details>
+      </div>
     </div>
   </header>
 
-  <main class="wrap" id="inhoud" tabindex="-1">
+  <main id="inhoud" tabindex="-1">
+    <div class="wrap">
     
 <div class="page-head page-head-list">
   <span class="eyebrow primary rise">Vacatures</span>
-  <h1 class="rise rise-2"><span id="vacancy-count" data-one="vacature open" data-many="vacatures open">10 vacatures open</span><span class="dot">.</span></h1>
-  <p class="lead">In zorg, beveiliging en infra. Het salaris staat erbij zodra de werkgever het aan ons heeft bevestigd.</p>
+  <h1 class="rise rise-2"><span id="vacancy-count" data-one="vacature open" data-many="vacatures open">10 vacatures open</span></h1>
+  <p class="lead">In zorg, beveiliging, infra, IT en logistiek. Het salaris staat erbij zodra de werkgever het aan ons heeft bevestigd.</p>
 </div>
 
 <div class="filter-row">
@@ -52,6 +97,10 @@
     <a href="/vacatures?sector=beveiliging" class="seg-item" data-sector="beveiliging">Beveiliging</a>
     
     <a href="/vacatures?sector=infra" class="seg-item" data-sector="infra">Infra</a>
+    
+    <a href="/vacatures?sector=it" class="seg-item" data-sector="it">IT</a>
+    
+    <a href="/vacatures?sector=logistiek" class="seg-item" data-sector="logistiek">Logistiek</a>
     
   </div>
   <form class="filters" method="get" action="/vacatures" id="vacancy-filters">
@@ -282,35 +331,55 @@
   <p>Met deze keuze is er niets. <a href="/vacatures">Toon alle vacatures</a>, of <a href="/inschrijven">schrijf je in</a>; dan bellen we zodra er wel iets is.</p>
 </div>
 
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="cols">
-        <div class="about">
-          <img src="/static/img/logo-breed-wit.png" alt="Skillpro" width="210" height="96">
-          <p>Skillpro zoekt mensen voor werkgevers in de zorg, de beveiliging en de infra. Vanuit Ede, voor heel Nederland. Je solliciteert bij ons, je contract teken je bij de werkgever.</p>
-          <p><a href="https://www.skillpro.nl" rel="noopener">www.skillpro.nl</a></p>
+      <div class="top">
+        <div class="brand">
+          <a class="f-logo" href="https://skillpro.nl/" rel="noopener" aria-label="SkillPro, naar skillpro.nl">
+            <picture>
+              <source type="image/webp" srcset="/static/img/logo-160.webp 160w, /static/img/logo-320.webp 320w" sizes="128px">
+              <img src="/static/img/logo-320.png" srcset="/static/img/logo-160.png 160w, /static/img/logo-320.png 320w" sizes="128px" width="790" height="349" alt="SkillPro" loading="lazy">
+            </picture>
+          </a>
+          <p>SkillPro zoekt mensen voor werkgevers in de zorg, de beveiliging, de infra, de IT en de logistiek. Vanuit Ede, voor heel Nederland. Je solliciteert bij ons, je contract teken je bij de werkgever.</p>
         </div>
-        <div>
-          <h3>Voor kandidaten</h3>
-          <a href="/vacatures">Alle vacatures</a>
-          <a href="/zorg">Werken in de zorg</a>
-          <a href="/beveiliging">Werken in de beveiliging</a>
-          <a href="/infra">Werken in de infra</a>
-          <a href="/inschrijven">Inschrijven</a>
-        </div>
-        <div>
-          <h3>Contact</h3>
-          <address>Faradaystraat 26A<br>6718 XT Ede</address>
-          <a href="tel:+31852033435">085 203 34 35</a>
-          <a href="mailto:info@skillpro.nl">info@skillpro.nl</a>
-          <p>Maandag tot en met vrijdag, 10:00 tot 18:00</p>
-        </div>
+        <nav class="cols" aria-label="Voetnavigatie">
+          <div class="col">
+            <h2 class="f-head">Sectoren</h2>
+            <ul>
+              <li><a href="/zorg">Zorg</a></li><li><a href="/beveiliging">Beveiliging</a></li><li><a href="/infra">Infrastructuur</a></li><li><a href="/it">IT</a></li><li><a href="/logistiek">Logistiek</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2 class="f-head">Voor kandidaten</h2>
+            <ul>
+              <li><a href="/vacatures">Alle vacatures</a></li>
+              <li><a href="/inschrijven">Inschrijven</a></li>
+              <li><a href="https://skillpro.nl/" rel="noopener">skillpro.nl <svg class="icon ext" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+              <li><a href="https://skillpro.nl/nieuws/" rel="noopener">Nieuws <svg class="icon ext" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2 class="f-head">Contact</h2>
+            <address>
+              <ul>
+                <li><a href="https://g.co/kgs/BWc3XUX" rel="noopener">Faradaystraat 26A<br>6718 XT Ede</a></li>
+                <li><a href="mailto:info@skillpro.nl">info@skillpro.nl</a></li>
+                <li><a href="tel:+31852033435">085 203 34 35</a></li>
+                <li class="hours">Maandag tot en met vrijdag, 10:00 tot 18:00</li>
+              </ul>
+            </address>
+          </div>
+        </nav>
       </div>
       <div class="bottom">
-        <span>© 2026 SkillPro B.V.</span>
-        <a href="https://www.skillpro.nl/privacyverklaring" rel="noopener">Privacyverklaring</a>
+        <p>© 2026 SkillPro B.V. · KvK 97255637</p>
+        <ul class="legal">
+          <li><a href="https://skillpro.nl/infra/privacyverklaring-eu/" rel="noopener">Privacyverklaring</a></li>
+        </ul>
       </div>
     </div>
   </footer>
