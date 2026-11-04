@@ -258,6 +258,8 @@ address { font-style: normal; margin: 0 0 8px; color: var(--muted); }
 .vacancy-head .eyebrow { margin-bottom: 16px; }
 .vacancy-head h1 { margin-bottom: 12px; }
 .vacancy-head .meta { font-size: var(--t-17); }
+.ongoing-note { margin: 20px 0 0; max-width: var(--measure); padding: 12px 16px; border: 1px solid var(--line-strong); border-radius: var(--r-small); color: var(--text-2); font-size: var(--t-15); }
+.ongoing-note strong { color: var(--text); font-weight: 600; }
 .vacancy-grid { display: grid; gap: 32px; grid-template-columns: 1fr; grid-template-areas: "facts" "body" "form"; align-items: start; }
 .vacancy-grid .vacancy-body { grid-area: body; }
 .vacancy-grid .apply { grid-area: form; }
